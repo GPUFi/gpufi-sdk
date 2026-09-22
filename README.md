@@ -167,7 +167,6 @@ setInterval(runKeeper, 30_000);
 | :--- | :--- |
 | **GPUFi Token (`$GPUF`)** | `0xa22D071A400099BF00911ef344CA79ae877540ae` |
 | **Mining Contract** | `0x31B1e4eEaD1DD90211038594538653220705cCae` |
-| **PONS V2 Factory** | `0x7eD598BcEf8bd9Edd8C97A195C6d13f40801EC7e` |
 
 Public Testnet RPC: `https://rpc.testnet.chain.robinhood.com`  
 Explorer: `https://explorer.testnet.chain.robinhood.com`
