@@ -15,7 +15,7 @@ Only the latest release of `gpufi-sdk` is officially supported for security patc
 
 `gpufi-sdk` operates entirely non-custodially:
 - **No Embedded Credentials**: The SDK never contains or requests central API keys, private keys, or secret tokens.
-- **Direct RPC Connections**: All RPC calls connect either to public chain nodes (`https://rpc.testnet.chain.robinhood.com`) or to developer-provided infrastructure.
+- **Direct RPC Connections**: All RPC calls connect either to public chain nodes (`https://rpc.mainnet.chain.robinhood.com`) or to developer-provided infrastructure.
 - **Client-Side Signing**: Transactions are signed exclusively by caller-supplied ethers `Signer` instances. Private keys never leave the caller's environment.
 
 ## Reporting a Vulnerability

@@ -5,7 +5,7 @@ import { GPUFiClient, formatDuration } from '../src';
  * Demonstrates public read-only query — zero API keys or signer required.
  */
 async function main() {
-  // Connects automatically to public Robinhood Chain Testnet RPC
+  // Connects automatically to public Robinhood Chain Mainnet RPC
   const client = new GPUFiClient();
 
   console.log('Connecting to GPUFi Protocol on Robinhood Chain...');

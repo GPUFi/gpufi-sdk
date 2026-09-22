@@ -23,7 +23,7 @@ export class GPUFiClient {
   public readonly revenue: RevenueClient;
 
   constructor(config: GPUFiClientConfig = {}) {
-    this.network = config.network || 'testnet';
+    this.network = config.network || 'mainnet';
 
     const netConfig =
       this.network === 'mainnet'

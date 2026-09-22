@@ -5,7 +5,7 @@ export type NetworkEnvironment = 'testnet' | 'mainnet';
 export interface GPUFiClientConfig {
   /**
    * Environment to connect to ('testnet' or 'mainnet').
-   * Default: 'testnet'
+   * Default: 'mainnet'
    */
   network?: NetworkEnvironment;
 

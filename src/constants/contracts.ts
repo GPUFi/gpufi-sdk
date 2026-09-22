@@ -9,11 +9,10 @@ export const CONTRACT_ADDRESSES = {
     NVDA_STOCK_TOKEN: '0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC',
   },
   MAINNET: {
-    // Mainnet contract addresses will be populated upon official deployment
-    GPUF_TOKEN: '',
-    MINING_CONTRACT: '',
-    PONS_V2_FACTORY: '',
-    NVDA_STOCK_TOKEN: '',
+    GPUF_TOKEN: '0x741352fA5EB05642C02fA0658743328e76C1B5cb',
+    MINING_CONTRACT: '0x1BF7C5E78b92cd91EAe35cDE6D99Ddc64b154B5A',
+    PONS_V2_FACTORY: '0x7eD598BcEf8bd9Edd8C97A195C6d13f40801EC7e',
+    NVDA_STOCK_TOKEN: '0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC',
   },
 } as const;
 
@@ -35,15 +34,15 @@ export const NETWORK_CONFIGS = {
     blockExplorerUrls: ['https://explorer.testnet.chain.robinhood.com'],
   },
   ROBINHOOD_MAINNET: {
-    chainId: 46631, // Subject to final Robinhood Chain specification
-    chainName: 'Robinhood Chain',
+    chainId: 4663,
+    chainName: 'Robinhood Chain Mainnet',
     nativeCurrency: {
       name: 'Ether',
       symbol: 'ETH',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc.chain.robinhood.com'],
-    blockExplorerUrls: ['https://explorer.chain.robinhood.com'],
+    rpcUrls: ['https://rpc.mainnet.chain.robinhood.com'],
+    blockExplorerUrls: ['https://robinhoodchain.blockscout.com'],
   },
 } as const;
 

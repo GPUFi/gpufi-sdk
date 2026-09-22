@@ -2,17 +2,25 @@ import { strict as assert } from 'node:assert';
 import test from 'node:test';
 import { GPUFiClient, CONTRACT_ADDRESSES } from '../dist/index.js';
 
-test('GPUFiClient instantiates with default testnet settings and zero API keys', () => {
+test('GPUFiClient instantiates with default mainnet settings and zero API keys', () => {
   const client = new GPUFiClient();
-  assert.equal(client.network, 'testnet');
-  assert.equal(client.rpcUrl, 'https://rpc.testnet.chain.robinhood.com');
-  assert.equal(client.tokenAddress, CONTRACT_ADDRESSES.TESTNET.GPUF_TOKEN);
-  assert.equal(client.miningAddress, CONTRACT_ADDRESSES.TESTNET.MINING_CONTRACT);
+  assert.equal(client.network, 'mainnet');
+  assert.equal(client.rpcUrl, 'https://rpc.mainnet.chain.robinhood.com');
+  assert.equal(client.tokenAddress, CONTRACT_ADDRESSES.MAINNET.GPUF_TOKEN);
+  assert.equal(client.miningAddress, CONTRACT_ADDRESSES.MAINNET.MINING_CONTRACT);
 
   // Sub-clients initialized
   assert.ok(client.token);
   assert.ok(client.mining);
   assert.ok(client.revenue);
+});
+
+test('GPUFiClient supports explicit testnet configuration', () => {
+  const client = new GPUFiClient({ network: 'testnet' });
+  assert.equal(client.network, 'testnet');
+  assert.equal(client.rpcUrl, 'https://rpc.testnet.chain.robinhood.com');
+  assert.equal(client.tokenAddress, CONTRACT_ADDRESSES.TESTNET.GPUF_TOKEN);
+  assert.equal(client.miningAddress, CONTRACT_ADDRESSES.TESTNET.MINING_CONTRACT);
 });
 
 test('GPUFiClient allows custom contract and RPC overrides', () => {

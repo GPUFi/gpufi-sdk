@@ -5,7 +5,7 @@
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/gpufi-sdk)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![X](https://img.shields.io/badge/X-@GPUFi__RH-000000?style=flat-square&logo=x)](https://x.com/GPUFi_RH)
-[![Network](https://img.shields.io/badge/Network-Robinhood%20Chain-111827?style=flat-square)](https://explorer.testnet.chain.robinhood.com)
+[![Network](https://img.shields.io/badge/Network-Robinhood%20Chain-111827?style=flat-square)](https://robinhoodchain.blockscout.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 **The official TypeScript & JavaScript SDK for interacting with GPUFi Protocol on Robinhood Chain.**
@@ -20,7 +20,7 @@
 - **Full TypeScript Type Safety**: Complete contract ABIs, typed miner states, epoch metrics, and quote calculations.
 - **Dual CJS & ESM Support**: Works out of the box in Node.js, Next.js, Vite, Bun, and browser environments.
 - **DePIN Staking & Mining Power**: Methods to track on-chain miner weight with the protocol's 21-day linear power ramp.
-- **Dual-Reward Settlements**: Single-transaction and batch claim utilities for both native `$ETH` and `$GPUF`.
+- **Dual-Reward Settlements**: Single-transaction and batch claim utilities for both native `$ETH` and `$GPUF` / `$RIG`.
 - **Autonomous Keeper Automation**: Pre-built logic for epoch advancement bots with 0.1% keeper fee capture.
 
 ---
@@ -50,7 +50,7 @@ bun add gpufi-sdk ethers
 
 ### 1. Read Protocol Telemetry (Zero Configuration / Read-Only)
 
-Connect to the public Robinhood Chain Testnet without needing an API key, wallet, or private key:
+Connect to the public Robinhood Chain Mainnet without needing an API key, wallet, or private key:
 
 ```typescript
 import { GPUFiClient, formatDuration } from 'gpufi-sdk';
@@ -161,6 +161,18 @@ setInterval(runKeeper, 30_000);
 
 ## Smart Contract References
 
+### Robinhood Chain Mainnet (`Chain ID: 4663`)
+
+| Contract | Address |
+| :--- | :--- |
+| **GPUFi Token (`$RIG`)** | `0x741352fA5EB05642C02fA0658743328e76C1B5cb` |
+| **Mining Contract** | `0x1BF7C5E78b92cd91EAe35cDE6D99Ddc64b154B5A` |
+| **Pons V2 Factory** | `0x7eD598BcEf8bd9Edd8C97A195C6d13f40801EC7e` |
+| **NVDA Reward Token** | `0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC` |
+
+Public Mainnet RPC: `https://rpc.mainnet.chain.robinhood.com`  
+Explorer: `https://robinhoodchain.blockscout.com`
+
 ### Robinhood Chain Testnet (`Chain ID: 46630`)
 
 | Contract | Address |
@@ -178,7 +190,7 @@ Explorer: `https://explorer.testnet.chain.robinhood.com`
 ### `GPUFiClient`
 
 - `new GPUFiClient(config?: GPUFiClientConfig)`
-  - `config.network`: `'testnet'` | `'mainnet'` (defaults to `'testnet'`)
+  - `config.network`: `'mainnet'` | `'testnet'` (defaults to `'mainnet'`)
   - `config.rpcUrl`: Custom RPC URL (optional)
   - `config.runner`: ethers `ContractRunner` (Signer or Provider)
   - `config.contracts`: Override token or mining contract addresses
