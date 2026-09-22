@@ -4,7 +4,7 @@
 
 [![NPM Version](https://img.shields.io/badge/npm-v1.0.0-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/gpufi-sdk)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![X](https://img.shields.io/badge/X-@GPUFi__-000000?style=flat-square&logo=x)](https://x.com/GPUFi_)
+[![X](https://img.shields.io/badge/X-@GPUFi__RH-000000?style=flat-square&logo=x)](https://x.com/GPUFi_RH)
 [![Network](https://img.shields.io/badge/Network-Robinhood%20Chain-111827?style=flat-square)](https://explorer.testnet.chain.robinhood.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
