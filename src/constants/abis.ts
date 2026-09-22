@@ -1,0 +1,43 @@
+export const GPUF_TOKEN_ABI = [
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function decimals() view returns (uint8)",
+  "function totalSupply() view returns (uint256)",
+  "function balanceOf(address account) view returns (uint256)",
+  "function allowance(address owner, address spender) view returns (uint256)",
+  "function approve(address spender, uint256 amount) returns (bool)",
+  "function transfer(address recipient, uint256 amount) returns (bool)",
+  "function transferFrom(address sender, address recipient, uint256 amount) returns (bool)",
+  "event Transfer(address indexed from, address indexed to, uint256 value)",
+  "event Approval(address indexed owner, address indexed spender, uint256 value)"
+] as const;
+
+export const MINING_CONTRACT_ABI = [
+  "function gpufToken() view returns (address)",
+  "function owner() view returns (address)",
+  "function renounced() view returns (bool)",
+  "function currentEpoch() view returns (uint256)",
+  "function currentEpochStartTime() view returns (uint256)",
+  "function totalStaked() view returns (uint256)",
+  "function totalMinersCount() view returns (uint256)",
+  "function pendingEthPool() view returns (uint256)",
+  "function pendingGpufPool() view returns (uint256)",
+  "function getMiningPower(address minerAddr) view returns (uint256)",
+  "function computeTotalMiningPower() view returns (uint256 totalWeight)",
+  "function miners(address miner) view returns (uint256 lockedAmount, uint256 lockStartTime, uint256 lastClaimEpoch, uint256 unlockedWithdrawn)",
+  "function epochs(uint256 epochId) view returns (uint256 ethRewardPool, uint256 gpufRewardPool, uint256 totalWeight, bool finalized)",
+  "function epochClaimed(uint256 epochId, address miner) view returns (bool)",
+  "function lock(uint256 amount)",
+  "function claim(uint256 epochId)",
+  "function claimBatch(uint256[] epochIds)",
+  "function emergencyExit()",
+  "function advanceEpoch()",
+  "function depositRevenue(uint256 gpufAmount) payable",
+  "function renounceOwnership()",
+  "event Locked(address indexed miner, uint256 amount, uint256 timestamp)",
+  "event EmergencyExit(address indexed miner, uint256 returnedAmount, uint256 penaltyAmount)",
+  "event Claimed(address indexed miner, uint256 indexed epoch, uint256 ethAmount, uint256 gpufAmount)",
+  "event EpochAdvanced(uint256 indexed newEpoch, uint256 ethPool, uint256 gpufPool, uint256 totalWeight, address indexed keeper)",
+  "event RevenueDeposited(address indexed sender, uint256 ethAmount, uint256 gpufAmount)",
+  "event OwnershipRenounced(address indexed previousOwner)"
+] as const;

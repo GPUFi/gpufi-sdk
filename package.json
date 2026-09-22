@@ -1,0 +1,73 @@
+{
+  "name": "gpufi-sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript & JavaScript SDK for GPUFi Protocol on Robinhood Chain",
+  "author": "GPUFi Protocol <dev@gpu-fi.uk>",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "http://gpu-fi.uk/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GPUFi/gpufi-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GPUFi/gpufi-sdk/issues"
+  },
+  "keywords": [
+    "gpufi",
+    "depin",
+    "gpu",
+    "mining",
+    "robinhood-chain",
+    "web3",
+    "ethereum",
+    "sdk",
+    "staking",
+    "defi"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "ethers": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.0"
+  },
+  "peerDependencies": {
+    "ethers": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
