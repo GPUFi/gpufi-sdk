@@ -8,7 +8,7 @@ import {
   EstimatedClaimReward,
   EmergencyExitQuote,
 } from './types';
-import { formatTokenAmount, parseTokenAmount } from './utils/format';
+import { formatTokenAmount, parseTokenAmount, readPendingTokenPool } from './utils/format';
 
 export class MiningClient {
   public readonly contract: Contract;
@@ -44,7 +44,7 @@ export class MiningClient {
       this.contract.totalStaked(),
       this.contract.totalMinersCount(),
       this.contract.pendingEthPool(),
-      this.contract.pendingGpufPool(),
+      readPendingTokenPool(this.contract),
       this.contract.computeTotalMiningPower(),
     ]);
 

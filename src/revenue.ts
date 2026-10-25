@@ -1,6 +1,6 @@
 import { Contract, ContractRunner } from 'ethers';
 import { MINING_CONTRACT_ABI } from './constants/abis';
-import { formatTokenAmount, parseTokenAmount } from './utils/format';
+import { formatTokenAmount, parseTokenAmount, readPendingTokenPool } from './utils/format';
 
 export interface DepositRevenueOptions {
   ethAmount?: string | number | bigint;
@@ -29,7 +29,7 @@ export class RevenueClient {
   public async getPendingPools() {
     const [pendingEth, pendingGpuf] = await Promise.all([
       this.contract.pendingEthPool(),
-      this.contract.pendingGpufPool(),
+      readPendingTokenPool(this.contract),
     ]);
 
     return {
