@@ -1,4 +1,4 @@
-import { formatUnits, parseUnits } from 'ethers';
+import { Contract, formatUnits, parseUnits } from 'ethers';
 import { PROTOCOL_CONSTANTS } from '../constants/contracts';
 
 /**
@@ -57,4 +57,16 @@ export function formatDuration(seconds: number): string {
     return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   }
   return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+/**
+ * Read the mining contract's pending token reward pool. The testnet contract names it `pendingGpufPool()`;
+ * the mainnet contract (chain 4663) has no such function and keeps that pool as `pendingNvdaPool()` instead.
+ */
+export async function readPendingTokenPool(contract: Contract): Promise<bigint> {
+  try {
+    return await contract.pendingGpufPool();
+  } catch {
+    return await contract.pendingNvdaPool();
+  }
 }

@@ -22,6 +22,7 @@ export const MINING_CONTRACT_ABI = [
   "function totalMinersCount() view returns (uint256)",
   "function pendingEthPool() view returns (uint256)",
   "function pendingGpufPool() view returns (uint256)",
+  "function pendingNvdaPool() view returns (uint256)",
   "function getMiningPower(address minerAddr) view returns (uint256)",
   "function computeTotalMiningPower() view returns (uint256 totalWeight)",
   "function miners(address miner) view returns (uint256 lockedAmount, uint256 lockStartTime, uint256 lastClaimEpoch, uint256 unlockedWithdrawn)",
